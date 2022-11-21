@@ -13,5 +13,11 @@ int num = Convert.ToInt32(input);
 
 int sqr = num * num;
 
-Console.Write("Квадрат числа " + num + " = " + sqr);
+Console.WriteLine("Способ 1:");
+
+Console.WriteLine("Квадрат числа " + num + " = " + sqr);
+
+Console.WriteLine("Способ 2:");
+
+Console.WriteLine($"Квадрат числа {num} = {Math.Pow(num,2)}");
 }
