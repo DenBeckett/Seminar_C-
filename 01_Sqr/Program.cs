@@ -5,7 +5,8 @@ Console.Clear();
 Console.WriteLine("Введите число:");
     
 string input = Console.ReadLine();
-if(input == ""){
+if(input == "")
+{
     Console.Write("Ничего не было введено!");
 }
 else{
