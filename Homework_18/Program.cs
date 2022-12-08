@@ -18,9 +18,11 @@ int max = Convert.ToInt32(Console.ReadLine());
 int[] array = FillArray(size,min,max);
 
 PrintArray(array);
-//GetEvenOddArray(array, out int[] EvenArray, out int[] OddArray);
+//GetEvenOddArray(array);
 PrintArray(GetEvenArray(array));
 PrintArray(GetOddArray(array));
+//Console.WriteLine($"{string.Join(",",EvenArray1)}");
+//Console.WriteLine($"{string.Join(",",OddArray1)}");
 
 if (GetArrayAverage(GetEvenArray(array)) > GetArrayAverage(GetOddArray(array))) 
 Console.WriteLine("средн. арифм. значений элементов массива с чётными числами > средн. арифм. значений элементов с нечётными числами");
@@ -54,7 +56,7 @@ void PrintArray(int[] array)
     Console.WriteLine();
 }
 
-//void GetEvenOddArray(int[] array, out int[] EvenArray, out int[] OddArray)
+//(int[],int[]) GetEvenOddArray(int[] array)
 //{
 //    int count = 0;
 //    for (int n=0; n < array.Length; n++)
@@ -62,8 +64,8 @@ void PrintArray(int[] array)
 //        if (array[n]%2 == 0) count++;
 //    }
 //
-//    int[] EvenArray = new int[count];
-//    int[] OddArray = new int[array.Length - count];
+//    int[] EvenArray1 = new int[count];
+//    int[] OddArray1 = new int[array.Length - count];
 //
 //    int j = 0;
 //    int k = 0;
@@ -71,15 +73,16 @@ void PrintArray(int[] array)
 //    {
 //        if (array[i]%2 == 0) 
 //        {
-//            array[i]=EvenArray[j];
+//            EvenArray1[j]=array[i];
 //            j++;
 //        }
 //        else
 //        {
-//            array[i]=OddArray[k];
+//            OddArray1[k]=array[i];
 //            k++;
 //        }
 //    }
+//    return (EvenArray1,OddArray1);
 //};
 
 int[] GetEvenArray(int[] array)
@@ -95,7 +98,7 @@ int[] GetEvenArray(int[] array)
     {
         if (array[i]%2 == 0) 
         {
-            array[i]=EvenArray[j];
+            EvenArray[j]=array[i];
             j++;
         }
     }
@@ -115,7 +118,7 @@ int[] GetOddArray(int[] array)
     {
         if (array[i]%2 == 1) 
         {
-            array[i]=OddArray[j];
+            OddArray[j]=array[i];
             j++;
         }
     }
