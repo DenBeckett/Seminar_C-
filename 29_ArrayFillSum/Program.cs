@@ -30,7 +30,7 @@ void PrintArray(int[,] inputArray)
     {
         for (int j = 0; j < inputArray.GetLength(1); j++)
         {
-            Console.Write(arr[i,j] >= 0 ? $"  {arr[i,j]}" : $" {arr[i,j]}");
+            Console.Write(inputArray[i,j] >= 0 ? $"  {inputArray[i,j]}" : $" {inputArray[i,j]}");
         }
         Console.WriteLine();
     }
