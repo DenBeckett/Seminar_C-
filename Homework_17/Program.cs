@@ -41,8 +41,8 @@ void PrintArray(double[] array)
 
 double GetDiffMaxMinValue(double[] array)
 {
-    double MinValue = 0;
-    double MaxValue = 0;
+    double MinValue = array[0];
+    double MaxValue = array[0];
     double Diff = 0;
     for (int i=0; i < array.Length; i++)
         if (MinValue > array[i]) MinValue = array[i];
