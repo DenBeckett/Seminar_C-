@@ -21,8 +21,8 @@ PrintArray(array);
 //GetEvenOddArray(array);
 PrintArray(GetEvenArray(array));
 PrintArray(GetOddArray(array));
-//Console.WriteLine($"{string.Join(",",EvenArray1)}");
-//Console.WriteLine($"{string.Join(",",OddArray1)}");
+//Console.WriteLine($"{string.Join(",",GetEvenOddArray(array).Item1)}");
+//Console.WriteLine($"{string.Join(",",GetEvenOddArray(array).Item2)}");
 
 if (GetArrayAverage(GetEvenArray(array)) > GetArrayAverage(GetOddArray(array))) 
 Console.WriteLine("средн. арифм. значений элементов массива с чётными числами > средн. арифм. значений элементов с нечётными числами");

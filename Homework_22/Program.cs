@@ -1,5 +1,5 @@
 ﻿//Напишите программу, которая задаёт массив из n элементов, которые необходимо заполнить случайными значениями и определить
-//существует ли пара соседних элементов с одинаковыми значениями, при наличии такого элемента заменить его на уникакальное значение.
+//существует ли пара соседних элементов с одинаковыми значениями, при наличии такого элемента заменить его на уникальное значение.
 
 //[1,2,3,3] -> [1,2,3,4]
 
@@ -48,12 +48,26 @@ int[] GetInique(int[] array)
 {
     int[] resultArray = new int[array.Length];
     Random random = new Random();
-    for(int i=0;i<array.Length;i++) {
+    int previousValue = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
         resultArray[i] = array[i];
     }
-    for(int i=0;i<array.Length - 1;i++) {
-        if (array[i] == array[i+1])
-        resultArray[i+1] = random.Next(min, max + 1);
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == previousValue)
+            resultArray[i] = GetUniqueValue(array[i], min, max);
+        previousValue = resultArray[i];
     }
     return resultArray;
+}
+
+int GetUniqueValue(int currentValue, int min, int max)
+{
+    int uniqueVal = new Random().Next(min, max + 1);
+
+    if (currentValue == uniqueVal)
+        return GetUniqueValue(currentValue, min, max);
+    else
+        return uniqueVal;
 }

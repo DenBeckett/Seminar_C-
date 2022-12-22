@@ -9,6 +9,10 @@ Console.WriteLine($"Число {a} в степени {b} равно {FindExpNumb
 
 double FindExpNumbers(int num1, int num2)
 {
-    double exp = Math.Pow(num1, num2);
+    double exp = 1;
+    for (int n = 0; n < num2; n++)
+    {
+        exp *= num1;
+    }
     return exp;
 }

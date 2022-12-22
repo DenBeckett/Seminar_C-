@@ -3,9 +3,9 @@
 Console.Write("Введите число ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine($"Сумма цифр числа равна {SumNumbers(number)}");
+Console.WriteLine($"Сумма цифр числа равна {GetSumNumbers(number)}");
 
-int SumNumbers(int num)
+int GetSumNumbers(int num)
 {
     int sum = 0;
     while (num != 0)
